@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+html,
+body {
+	margin: 0;
+
+	font-family: Montserrat, sans-serif;
+	background: white;
+	transition: all 0.7s;
+}
+
+body.active {
+	background: black;
+}
+
+h1 {
+	color: black;
+	transition: all 0.7s;
+}
+
+h1.active {
+	color: white;
+	transition: all 0.7s;
+}
+
+#master-grid {
+	display: grid;
+	min-height: 100vh;
+	/* 	background: red; */
+
+	grid-template-columns: 10% 40% 40% 10%;
+	grid-template-rows: 50px 1fr auto;
+	grid-template-areas:
+		"navbar-left header header navbar-right"
+		". main main ."
+		"footer footer footer footer";
+}
+#navbar-left {
+	grid-area: navbar-left;
+	background: aqua;
+	padding: 25px;
+	position: fixed;
+}
+#navbar-right {
+	grid-area: navbar-right;
+	background: yellow;
+	padding: 25px;
+	right: 0;
+	position: fixed;
+}
+
+#body {
+	grid-area: main;
+	/* 	background: violet; */
+
+	display: grid;
+	grid-template-rows: 90vh;
+
+	grid-gap: 25px;
+	grid-template-areas:
+		"start start start"
+		"beerpong influence github"
+		"codepen codepen codepen"
+		"contact contact contact";
+}
+#start {
+	grid-area: start;
+	font-size: 40px;
+	vertical-align: center;
+	margin: auto 0 auto 0;
+
+	/* 	background: orange; */
+}
+
+#beerpong {
+	grid-area: beerpong;
+	background: darkgray;
+
+	background-size: contain;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-image: url("https://www.dropbox.com/s/mrw4lg8ljlk9uhd/bpTitle.png?dl=1");
+}
+
+#beerpong img {
+	opacity: 0;
+}
+
+#beerpong:hover {
+	background-image: url("https://www.dropbox.com/s/9duz6trkjf6vur5/BPStorePhoto.png?dl=1");
+}
+
+#influence {
+	grid-area: influence;
+	background: #918100;
+
+	background-size: contain;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-image: url("https://www.dropbox.com/s/yvszryycjz406f6/influenceTitle.png?dl=1");
+}
+
+#influence img {
+	opacity: 0;
+}
+
+#influence:hover {
+	background-image: url("https://www.dropbox.com/s/2fh5vcg5seg258g/Influence.png?dl=1");
+}
+
+#github {
+	grid-area: github;
+	background: #1d6ecc;
+
+	background-size: contain;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-image: url("https://www.dropbox.com/s/ba20ia1aypm8yhx/githubTitle.png?dl=1");
+}
+
+#github img {
+	opacity: 0;
+}
+
+#github:hover {
+	background-image: url("https://www.dropbox.com/s/l9oksz1oz8d1e9d/github.png?dl=1");
+}
+
+#codepen {
+	grid-area: codepen;
+	background: #333333;
+
+	background-size: contain;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-image: url("https://www.dropbox.com/s/kpvmdsraoey4l4s/codepenTitle.png?dl=1");
+}
+
+#codepen img {
+	opacity: 0;
+}
+
+#codepen:hover {
+	background-image: url("https://www.dropbox.com/s/u85vyigz7e7w6sh/codepen.png?dl=1");
+}
+
+#footer {
+	text-align: center;
+	grid-area: footer;
+	background-color: white;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.beerpongBG {
+	background: grey;
+}
+
+.influenceBG {
+	background: #736a21;
+}
+
+.githubBG {
+	background: #1d3670;
+}
+
+.codepenBG {
+	background: #141414;
+}
+
+#contact {
+	grid-area: contact;
+	font-size: 1em;
+	color: white;
+}
+
+p {
+	font-size: 2em;
+}
+h2 {
+	font-size: 3em;
+}
+a:link {
+	text-decoration: none;
+	color: white;
+}
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+a:focus {
+	text-decoration: none;
+	color: white;
+}
+a:hover,
+a:active {
+	text-decoration: none;
+	color: darkgray;
+}
