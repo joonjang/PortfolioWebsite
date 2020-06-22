@@ -50,12 +50,11 @@ h1.active {
 }
 
 #body {
-	grid-area: main;
-		background: violet;
+/* background: violet; */
 
+	grid-area: main;
 	display: grid;
 	grid-template-rows: 85vh;
-
 
 	grid-template-areas:
 		"start"
@@ -64,9 +63,8 @@ h1.active {
 }
 
 #content{
-	background-color: indianred;
+	/* background-color: indianred; */
 	grid-area: content;
-	/* 	background: violet; */
 
 	display: grid;
 
@@ -269,16 +267,6 @@ a:active {
 	background-color: transparent;
 	font-size: 1em;
   }
-
-  /* .contentPhoto {
-	  background-color: red;
-	position: relative;
-  max-height: 0;
-  font-size: 12px;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-} */
-
   
   .photoInfo .closebtn {
 	position: absolute;
@@ -287,11 +275,15 @@ a:active {
 	font-size: 36px;
   }
 
+  /* The information once title is clicked */
+
   .photoInfo{
+	  animation: cardEntrance 600ms ease-out;
 	background-color: blue;
 	width: 100%;
 	height: auto;
 	grid-area: codepen;
+	--stagger-delay: 100ms;
 	/* height: 850px; */
 }
 
@@ -312,8 +304,6 @@ a:active {
    /* starting tile photo */
   .photoTile{
 	  	display: block;
-
-	  /* background-color: rgb(36, 243, 147); */
 
 	  	animation: cardEntrance 700ms ease-out;
   		animation-fill-mode: backwards;
