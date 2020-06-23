@@ -27,12 +27,14 @@ var topInt;
 window.onscroll = function () {
 	var top = window.pageYOffset;
 	topInt = top;
-	if (top >= 50 & !tileHover) {
-		transition.classList.add("active");
-		textChange.classList.add("active");
-	} else {
-		transition.classList.remove("active");
-		textChange.classList.remove("active");
+	if(!tileHover){
+		if (top >= 50 ) {
+			transition.classList.add("active");
+			textChange.classList.add("active");
+		} else {
+			transition.classList.remove("active");
+			textChange.classList.remove("active");
+		}
 	}
 	
 };
@@ -141,13 +143,12 @@ var i;
 //   });
 // }
 
-
 function isolatePhoto(clickedId){
 
 	// var bp = document.getElementById("beerpong");
 	// bp.classList.remove("photoTile");
-	var contentHeight = document.getElementById("content").getBoundingClientRect().height;
-
+	var contentHeight = document.getElementById("content").getBoundingClientRect().height - 100;
+	
 	for(var i = 0; i < photoClass.length; i++){
 		photoClass[i].style.display = "none";
 	};
@@ -158,8 +159,13 @@ function isolatePhoto(clickedId){
 
 	var infoId = document.getElementById(clickedId + "Info");
 	infoId.style.display = "block";
-	infoId.style.height = contentHeight + "px";
+	
+	// var infoHeight = document.getElementById("content").getBoundingClientRect().height - 100;
+	
 
+		infoId.style.minHeight = contentHeight + "px";
+	
+	
 	// change background to chosen tile theme color
 	// var backgroundElement = document.getElementById("bgtransition");
 	// get current tile theme color
@@ -199,6 +205,7 @@ function showPhoto(clickedId){
 	transition.classList.add("active");
 	textChange.classList.add("active");
 	transition.classList.remove(clickedId.substring(0, clickedId.length - 4) + "BG");
+
 
 	tileClickColorChange=false;
 	tileHover = false;

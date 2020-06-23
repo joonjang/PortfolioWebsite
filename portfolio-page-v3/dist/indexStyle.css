@@ -63,7 +63,7 @@ h1.active {
 }
 
 #content{
-	/* background-color: indianred; */
+	background-color: indianred;
 	grid-area: content;
 
 	display: grid;
@@ -183,11 +183,11 @@ img {
 }
 
 .beerpongBG {
-	background: grey;
+	background: #696969;
 }
 
 .influenceBG {
-	background: #736a21;
+	background: #6e6e00;
 }
 
 .githubBG {
@@ -199,6 +199,7 @@ img {
 }
 
 #contact {
+	/* background-color: red; */
 	grid-area: contact;
 	font-size: 1em;
 	color: white;
@@ -271,19 +272,22 @@ a:active {
   .photoInfo .closebtn {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 20px;
 	font-size: 36px;
   }
 
   /* The information once title is clicked */
 
   .photoInfo{
-	  animation: cardEntrance 600ms ease-out;
-	background-color: blue;
+	  animation: cardEntrance 500ms ease-out;
+	background-color: #333333;
+	color: white;
 	width: 100%;
 	height: auto;
 	grid-area: codepen;
 	--stagger-delay: 100ms;
+
+	padding: 25px;
 	/* height: 850px; */
 }
 
@@ -329,4 +333,11 @@ a:active {
   #codepenInfo{
 	position: relative;
 	display: none;
+  }
+
+  .infoDescription{
+
+	  margin-left: 25px;
+	  /* background: blue; */
+	  font-size: 18px;
   }
