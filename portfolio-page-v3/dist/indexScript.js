@@ -22,6 +22,7 @@ var codepen = new Image();
 codepen.src = "https://www.dropbox.com/s/u85vyigz7e7w6sh/codepen.png?dl=1";
 
 var topInt;
+
 // start screen color change from black to white
 // background and header text
 window.onscroll = function () {
@@ -121,69 +122,29 @@ for (i = 0; i < coll.length; i++) {
 
 var collPhoto = document.getElementsByClassName("collapsiblePhoto");
 var photoClass = document.getElementsByClassName("photoTile");
-// var photoInfo = document.getElementsByClassName("photoInfo");
 var i;
-
-// // photo tile collapsible
-// for (i = 0; i < collPhoto.length; i++) {
-//   collPhoto[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var contentPhoto = this.nextElementSibling;
-//     if (content.style.maxHeight){
-// 		// shrink
-// 		contentPhoto.style.maxHeight = null;
-// 		contentPhoto.style.width = "100%";
-	  
-	  
-//     } else {
-// 		// enlarge
-// 		contentPhoto.style.maxHeight = contentPhoto.scrollHeight + "px";
-// 		contentPhoto.style.width = "1000px";
-//     } 
-//   });
-// }
 
 function isolatePhoto(clickedId){
 
-	// var bp = document.getElementById("beerpong");
-	// bp.classList.remove("photoTile");
 	var contentHeight = document.getElementById("content").getBoundingClientRect().height - 100;
 	
 	for(var i = 0; i < photoClass.length; i++){
 		photoClass[i].style.display = "none";
 	};
 
-	// for(var i = 0; i < photoInfo.length; i++){
-	// 	photoInfo[i].style.display = "block";
-	// }
 
 	var infoId = document.getElementById(clickedId + "Info");
 	infoId.style.display = "block";
 	
-	// var infoHeight = document.getElementById("content").getBoundingClientRect().height - 100;
+
+	infoId.style.minHeight = contentHeight + "px";
 	
 
-		infoId.style.minHeight = contentHeight + "px";
-	
-	
-	// change background to chosen tile theme color
-	// var backgroundElement = document.getElementById("bgtransition");
-	// get current tile theme color
-
-	// transition.classList.remove("active");
-	// textChange.classList.remove("active");
-	// transition.classList.add(clickedId + "BG");
-
-	// var tileColorTheme = document.styleSheets.getElementById(clickedId + "BG");
-	// backgroundElement.style.backgroundColor = tileColorTheme;
 	tileClickColorChange=true;
 
 }
 
 function showPhoto(clickedId){
-
-	// var bp = document.getElementById("beerpong");
-	// bp.classList.add("photoTile");
 
 	bpTile.style.animationDelay = "calc(1 * var(--stagger-delay))";
 	influenceTile.style.animationDelay = "calc(1 * var(--stagger-delay))";
@@ -194,14 +155,10 @@ function showPhoto(clickedId){
 		photoClass[i].style.display = "block";
 	};
 
-	// var idString = String(clickedId);
-	// var tmp = idString.substring(0, idString.length - 4);
 	var infoId = document.getElementById(clickedId);
 	infoId.style.display = "none";
 
 	// turn off the chosen tile background color
-	
-	// document.getElementById("bgtransition").style.backgroundColor = null;
 	transition.classList.add("active");
 	textChange.classList.add("active");
 	transition.classList.remove(clickedId.substring(0, clickedId.length - 4) + "BG");

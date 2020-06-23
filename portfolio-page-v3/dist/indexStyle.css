@@ -23,6 +23,7 @@ h1.active {
 	transition: all 0.7s;
 }
 
+
 #master-grid {
 	display: grid;
 	min-height: 100vh;
@@ -37,17 +38,45 @@ h1.active {
 }
 #navbar-left {
 	grid-area: navbar-left;
-	background: aqua;
+	/* background: aqua; */
 	padding: 25px;
 	position: fixed;
+	font-size: 2em;
+	z-index: 1;
+
+	filter: invert(1);
+	mix-blend-mode: difference;
+
 }
+
 #navbar-right {
 	grid-area: navbar-right;
-	background: yellow;
+	/* background: yellow; */
 	padding: 25px;
 	right: 0;
 	position: fixed;
+	font-size: 2em;
+	z-index: 1;
+	
+	filter: invert(1);
+	mix-blend-mode: difference;
 }
+
+#navbar-left span{
+
+	display: inline-flex;
+  }
+  
+  #navbar-left span:nth-child(even){
+	overflow: hidden;
+	transition: ease-in-out 0.5s;
+	letter-spacing: -1em;
+  }
+  
+  #navbar-left:hover span:nth-child(even){
+	letter-spacing:0;
+  }
+  
 
 #body {
 /* background: violet; */
@@ -63,7 +92,7 @@ h1.active {
 }
 
 #content{
-	background-color: indianred;
+	/* background-color: indianred; */
 	grid-area: content;
 
 	display: grid;
@@ -282,7 +311,7 @@ a:active {
 	  animation: cardEntrance 500ms ease-out;
 	background-color: #333333;
 	color: white;
-	width: 100%;
+	width: auto;
 	height: auto;
 	grid-area: codepen;
 	--stagger-delay: 100ms;
@@ -339,5 +368,11 @@ a:active {
 
 	  margin-left: 25px;
 	  /* background: blue; */
-	  font-size: 18px;
+	  font-size: 24px;
+  }
+
+  .infoClickLink{
+	  padding-left: 2em;
+	  font-size: 24px;
+	  /* background: red; */
   }
